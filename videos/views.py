@@ -49,9 +49,8 @@ def details(request, video_id):
     if request.COOKIES.has_key('user_name'):
         id = User.objects.get(user_name=request.COOKIES.get('user_name')).id
         # vd = Video.objects.filter(user_key=User.objects.filter(id=id))
-        video_details=Video.objects.filter(user_key=User.objects.filter(id=id))
+        video_details=Video.objects.get(id= video_id)
         context = {'video': video_details}
-        import ipdb;ipdb.set_trace()
         return render(request, 'videos/detail.html', context)
     return HttpResponseBadRequest("Page not Found")
 
