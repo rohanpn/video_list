@@ -109,9 +109,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT='/home/rohan/workspace/django_projects/video_list/static'
+STATIC_ROOT='/home/rohan/django/django_projects/video_list/static'
 
 MEDIA_URL='/media/'
-MEDIA_ROOT='/home/rohan/workspace/django_projects/video_list/media'
+MEDIA_ROOT='/home/rohan/django/django_projects/video_list/media'
 
-FILE_UPLOAD_TEMP_DIR='/home/rohan/workspace/django_projects/video_list/temp'
+FILE_UPLOAD_TEMP_DIR='/home/rohan/django/django_projects/video_list/temp'
