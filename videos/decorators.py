@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
-def cookie_required(func=None):
+def login_check(func=None):
     """
         Decorator to check whether the user is logged in .
     """

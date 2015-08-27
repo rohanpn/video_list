@@ -3,11 +3,11 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.views.decorators.vary import vary_on_headers
 from .models import Video, User
-from .decorators import cookie_required
+from .decorators import login_check
 
 
 
-@cookie_required
+@login_check
 def list_videos_view(request):
     """
         List all titles of the videos available
@@ -18,7 +18,7 @@ def list_videos_view(request):
     return render(request, 'videos/index.html', context)
 
 
-@cookie_required
+@login_check
 def add_video_view(request):
     """
         Add a video
@@ -26,7 +26,7 @@ def add_video_view(request):
     return render(request, 'videos/add_video.html')
 
 
-@cookie_required
+@login_check
 def upload_video_view(request):
     """
         Upload video in the database
@@ -43,7 +43,7 @@ def upload_video_view(request):
     else:
         return HttpResponseBadRequest("Invalid video Format.")
 
-@cookie_required
+@login_check
 def details_view(request, video_id):
     """
         List all the details of the video
@@ -54,7 +54,7 @@ def details_view(request, video_id):
     context = {'video': video_details}
     return render(request, 'videos/detail.html', context)
 
-@cookie_required
+@login_check
 def delete_video_view(request, video_id):
     """
         Delete the record from the database
