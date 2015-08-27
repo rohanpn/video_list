@@ -25,39 +25,32 @@ padding:5px;
     </div>
 </head>
 <body style="background-color: lightblue">
+    <!--home page-->
+    {%block contents %}
+    {% endblock %}
 
+    <!--login page for block-->
+    {% block video_login %}
+    {% endblock %}
 
+    <!--list all the videos-->
+    {% block list_videos %}
+    {% endblock %}
 
-<!--home page-->
+    <!--register user-->
+    {% block register%}
+    {% endblock %}
 
-{%block contents %}
-{% endblock %}
+    <!--list the videos of the particular logged in user-->
+    {% block video_list %}
+    {% endblock %}
 
-<!--login page for block-->
+    <!--add video-->
+    {%block add_video %}
+    {% endblock %}
 
-{% block video_login %}
-{% endblock %}
-
-
-{% block list_videos %}
-{% endblock %}
-
-
-<!--register user-->
-{% block register%}
-{% endblock %}
-
-
-<!--list the videos of the particular logged in user-->
-{% block video_list %}
-{% endblock %}
-
-<!--add video-->
-{%block add_video %}
-{% endblock %}
-
-{%block details%}
-{% endblock %}
-
+    <!--play video/show video details-->
+    {%block details%}
+    {% endblock %}
 </body>
 </html>
