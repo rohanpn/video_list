@@ -4,23 +4,27 @@
 
 
  {% block video_list %}
-        <a href="{% url 'logout' %} ">logout</a>
+<a href="{% url 'logout' %} ">logout</a>
 
         {% if video_list %}
 
         <div class="align-text-center">
             <form action = "{%url 'add_video' %}" method="post">
                 {% csrf_token %}
-                <input type="submit" value="Upload Video">
+                <input type="submit" value="Upload Video"><br>
             </form>
         </div>
 
         <div class="align-text-center">
-            {% for video in video_list %}
-                    <a href="{% url 'details' video.id %}">{{ video.name }}</a>
-                    <a href="{% url 'delete_video' video.id %}" >delete</a><br>
+            <table class="table_style box">
+                {% for video in video_list %}
+                        <tr>
+                            <td><a href="{% url 'details' video.id %}">{{video.name}}</a></td>
+                            <td><a href="{% url 'delete_video' video.id %}" >delete</a><br></td>
+                        </tr>
 
-            {% endfor %}
+                {% endfor %}
+            </table>
         </div>
 
 {% else %}

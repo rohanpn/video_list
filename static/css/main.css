@@ -22,6 +22,7 @@ html {
 body {
   margin: 0; }
 
+/*header tag for welcome tagline */
 header{
  background-color:black;
  color:white;
@@ -40,11 +41,23 @@ padding:5px;
 }
 
 /*aligin text to center*/
-
 .align-text-center{
     text-align: center;
 }
 
+/*change background color */
 .bgcolor{
     background-color: lightblue ;
+}
+
+
+.box{
+    border:2px solid black;
+    padding: 10px;
+}
+
+.table_style{
+    border: 3;
+    width: 100%;
+
 }

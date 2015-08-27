@@ -3,19 +3,26 @@
 {% extends 'base.html' %}
 
 {%block details%}
-    {% if video %}
-        <h3>{{ video.name}}</h3>
-         Size         : {{ video.size  }} bytes<br>
-         Published on : {{ video.published  }}<br>
-         <video width="320" height="240" controls>
-
-              <source src="{{MEDIA_URL}}{{video.name}}" type="video/webm">
-              <source src="{{MEDIA_URL}}{{video.name}}" type="video/mp4">
-              <source src="{{MEDIA_URL}}{{video.name}}" type="video/ogg">
-              Your browser does not support the video tag.
-         </video><br>
-    {% endif %}
-     <a href="{% url 'list_video' %}">back</a><br>
     <a href="{% url 'logout' %}">logout</a>
+    {% if video %}
+        <div class="align-text-center">
+        <div class="box ">
+
+            <h3>{{ video.name}}</h3>
+             Size         : {{ video.size  }} bytes<br>
+             Published on : {{ video.published  }}<br>
+             <video width="420" height="340" controls>
+
+                  <source src="{{MEDIA_URL}}{{video.name}}" type="video/webm">
+                  <source src="{{MEDIA_URL}}{{video.name}}" type="video/mp4">
+                  <source src="{{MEDIA_URL}}{{video.name}}" type="video/ogg">
+                  Your browser does not support the video tag.
+             </video><br>
+        <a href="{% url 'list_video' %}">back</a><br>
+         </div>
+        </div>
+
+    {% endif %}
+
 {% endblock %}
 
