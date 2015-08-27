@@ -1,11 +1,8 @@
 
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <title>Video List</title>
-    </head>
-    <body>
+
+{% extends 'base.html' %}
+
+ {% block video_list %}
         {% if video_list %}
             <ul>
                 {% for video in video_list %}
@@ -24,5 +21,4 @@
             <input type="submit" value="Upload Video">
         </form>
         <a href="{% url 'logout' %}">logout</a>
-    </body>
-</html>
+ {% endblock %}
