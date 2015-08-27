@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-   <meta charset="UTF-8">
-   <title>Upload Video</title>
-</head>
-<body>
+        {% extends 'base.html' %}
+
+ {%block add_video %}
+
     <form action="{% url 'upload_video' %}" method="post" enctype="multipart/form-data">
        {% csrf_token %}
     <table>
@@ -21,5 +19,4 @@
     <a href="{% url 'list_video' %}">back</a>
     <a href="{% url 'logout' %}">logout</a>
     </form>
-</body>
-</html>
+{% endblock %}

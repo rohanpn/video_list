@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Video Application</title>
-</head>
-<body>
-    <a href="{% url 'list_video' %}">List Videos</a><br>
-    <a href="{% url 'login' %}"> Login</a><br>
+
+{% extends 'base.html' %}
+
+{% block contents %}
+<div style="text-align: center" id="nav">
+    <a href="{% url 'list_video' %}">List Videos</a><br></tr>
+    <tr>    <a href="{% url 'login' %}"> Login</a><br></tr>
+    <tr>
     {% if error %}
         {{ error }}
     {% endif %}
-</body>
-</html>
+    </tr>
+</div>
+{% endblock %}
+
+{% block list_videos %}
+{% endblock %}
