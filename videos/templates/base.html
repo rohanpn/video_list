@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<style>
+    header{
+ background-color:black;
+ color:white;
+ text-align:center;
+ padding:20px;
+}
+
+#nav {
+line-height:30px;
+background-color:#eeeeee;
+height:300px;
+width:100px;
+float:left;
+padding:5px;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Video Application</title>
+    <div style="text-align: center">
+        <header><h1>Weclome to  V-tube</h1></header>
+    </div>
+</head>
+<body style="background-color: lightblue">
+
+
+
+<!--home page-->
+
+{%block contents %}
+{% endblock %}
+
+<!--login page for block-->
+
+{% block video_login %}
+{% endblock %}
+
+
+{% block list_videos %}
+{% endblock %}
+
+
+<!--register user-->
+{% block register%}
+{% endblock %}
+
+
+<!--list the videos of the particular logged in user-->
+{% block video_list %}
+{% endblock %}
+
+<!--add video-->
+{%block add_video %}
+{% endblock %}
+
+{%block details%}
+{% endblock %}
+
+</body>
+</html>
