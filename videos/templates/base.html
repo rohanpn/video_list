@@ -1,30 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-<style>
-    header{
- background-color:black;
- color:white;
- text-align:center;
- padding:20px;
-}
+{% load staticfiles %}
 
-#nav {
-line-height:30px;
-background-color:#eeeeee;
-height:300px;
-width:100px;
-float:left;
-padding:5px;
-}
-</style>
+
+<html>
+<!--<link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet"/>-->
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<head lang="en">
     <meta charset="UTF-8">
     <title>Video Application</title>
-    <div style="text-align: center">
-        <header><h1>Weclome to  V-tube</h1></header>
+    <div class="align-text-center">
+            <header>
+                <h1>Weclome to  V-tube</h1>
+            </header>
     </div>
 </head>
-<body style="background-color: lightblue">
+<body class="bgcolor">
     <!--home page-->
     {%block contents %}
     {% endblock %}
