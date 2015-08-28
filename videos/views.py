@@ -31,9 +31,6 @@ def upload_video_view(request):
     """
         Upload video in the database
     """
-    # if request.method == 'POST':
-    #     form = VideoForm(request.POST)
-    #     if form.is_valid():
     user_obj = User.objects.get(user_name=request.COOKIES.get('user_name'))
     file_details = request.FILES['file_name']
 
@@ -46,8 +43,6 @@ def upload_video_view(request):
     else:
         return HttpResponseBadRequest("Invalid video Format.")
 
-    # else:
-    #     return render(request, 'User/login.html')
 
 @login_check
 def details_view(request, video_id):
