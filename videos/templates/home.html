@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-
 {% extends 'base.html' %}
 
 {% block contents %}
-<div style="text-align: center" id="nav">
-    <a href="{% url 'list_video' %}">List Videos</a><br></tr>
-    <tr>    <a href="{% url 'login' %}"> Login</a><br></tr>
-    <tr>
-    {% if error %}
-        {{ error }}
-    {% endif %}
-    </tr>
-</div>
+    <div style="text-align: center" id="nav">
+        <a href="{% url 'list_video' %}">List Videos</a><br></tr>
+        <tr>    <a href="{% url 'login' %}"> Login</a><br></tr>
+        <tr>
+            {% if error %}
+                {{ error }}
+            {% endif %}
+        </tr>
+    </div>
 {% endblock %}
 
 {% block list_videos %}

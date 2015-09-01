@@ -11,5 +11,3 @@ class User(models.Model):
     def __str__(self):
         return self.user_name
 
-    def __unicode__(self):
-        return unicode(self.user_name)

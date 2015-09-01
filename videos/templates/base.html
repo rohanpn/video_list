@@ -10,22 +10,23 @@
     <title>Video Application</title>
     <div class="align-text-center">
             <header>
-                <h1>Weclome to  V-tube</h1>
+                <a href="{% url 'home'%}"><h1>V-tube</h1></a>
+
             </header>
     </div>
 </head>
 <body class="bgcolor">
     <!--home page-->
     {%block contents %}
-    {% endblock %}
+    {% endblock contents %}
 
     <!--login page for block-->
     {% block video_login %}
-    {% endblock %}
+    {% endblock video_login%}
 
     <!--list all the videos-->
     {% block list_videos %}
-    {% endblock %}
+    {% endblock list_videos%}
 
     <!--register user-->
     {% block register%}
@@ -37,10 +38,10 @@
 
     <!--add video-->
     {%block add_video %}
-    {% endblock %}
+    {% endblock add_video %}
 
     <!--play video/show video details-->
     {%block details%}
-    {% endblock %}
+    {% endblock details%}
 </body>
 </html>
