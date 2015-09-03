@@ -1,12 +1,11 @@
-
-
 {% extends 'base.html' %}
 
+<!--List all the videos uploaded by the user-->
 
 {% block list_videos %}
     <a href="{% url 'logout' %} ">logout</a>
     <div class="align-text-center">
-        <form action = "{%url 'add_video' %}" method="post">
+        <form action = "{%url 'add_video' %}" method="post"><br>
             {% csrf_token %}
             <input type="submit" value="Upload Video"><br>
         </form>

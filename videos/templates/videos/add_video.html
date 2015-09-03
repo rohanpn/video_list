@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+<!--template to upload a video-->
 {%block add_video %}
     <form action="{% url 'upload_video' %}" method="post" enctype="multipart/form-data">
        {% csrf_token %}

@@ -1,5 +1,5 @@
-
 {% extends 'base.html' %}
+        <!--Form for the user to register-->
  {%block register %}
     <form action="{% url 'register_user' %}" method="post">
         {% csrf_token %}
