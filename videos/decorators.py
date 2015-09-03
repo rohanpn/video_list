@@ -8,6 +8,18 @@ def required_login(func=None):
         Decorator to check whether the user is logged in .
     """
     def cookie_wrap(request, *args, **kwargs):
+        if request.request.COOKIES.has_key('user_name') and request.request.session.has_key('user_name'):
+            user = request.request.COOKIES.get('user_name')
+            if User.objects.filter(user_name=user).exists():
+                if user == request.request.session.get('user_name'):
+                    return func(request, *args, **kwargs)
+        return render(request, 'home.html', {'error': 'You must be Logged In to Continue.'})
+    return cookie_wrap
+
+
+
+def req_login(func=None):
+    def cookie_wrap(request, *args, **kwargs):
         if request.COOKIES.has_key('user_name') and request.session.has_key('user_name'):
             user = request.COOKIES.get('user_name')
             if User.objects.filter(user_name=user).exists():

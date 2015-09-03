@@ -1,7 +1,8 @@
+from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from .models import User
-from videos.views import list_videos_view
+from videos.views import  VideoListView
 from .forms import VideoUserForm
 from videos.decorators import post_method
 
@@ -26,7 +27,7 @@ def video_login_view(request):
             else:
                 return render(request, 'User/login.html', {'error': 'No such user registered'})
             request.session['user_name']=user_name
-            response = redirect(list_videos_view)
+            response = redirect(reverse('list_video'))
             response.set_cookie('user_name', user_name)
             return response
         else:

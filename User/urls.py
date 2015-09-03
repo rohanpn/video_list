@@ -3,7 +3,6 @@ import User
 from django.conf.urls import include, url
 from django.views.generic.base import TemplateView
 from User.views import video_register_view, video_logout_view, video_login_view
-from User.models import User
 
 urlpatterns = [
 
