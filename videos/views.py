@@ -8,11 +8,12 @@ from django.views.generic.edit import DeleteView, CreateView
 from django.views.generic.list import ListView
 from .models import Video, User
 from .decorators import required_login
+from videos.forms import VideoForm
 
 
 class VideoListView(ListView):
     """
-        list all the videos of the current loggedin users.
+        list all the videos of the current logged in users.
         ListView: "object_list" in our case 'video_list' is executed.
             which we get with get_queryset(). hence, it is overridden
     """
@@ -34,6 +35,7 @@ class AddVideoView(View):
         """
             Need of the method is because the request made is post
         """
+
         return render(self.request, self.template_name)
 
 
@@ -49,8 +51,11 @@ class VideoUploadView(CreateView):
 
     @required_login
     def post(self, request, *args, **kwargs):
+        form = VideoForm(request.POST)
         user_obj = User.objects.get(user_name=self.request.COOKIES.get('user_name'))
         file_details= self.request.FILES['file_name']
+
+        # Use form.is_multipart() instead
         if file_details.content_type.startswith('video/'):
             Video.objects.create(user_key=user_obj, name=file_details.name, size=file_details.size,
                                  published = timezone.now(), file=file_details)
@@ -64,7 +69,7 @@ class VideoDetailView(DetailView):
         DetailView: self.object contains the list of object provided to this view,
             here we have passed the pk of the model t
     """
-    template_name = "videos/detail.html"
+    # template_name = "videos/video_detail.html"
     context_object_name = "video"
     model = Video
 
