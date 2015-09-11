@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 {% extends 'base.html' %}
 
-{% block video_login %}
+{% block contents %}
 <form action="{% url 'login_validate' %}"  method="post">
     {% csrf_token %}
     <table>
            <tr>
-               <td><label>User Name</label></td><br>
-               <td><input type="text"  name="name" required="name"></td>
+               <td><label for="name">User Name</label></td><br>
+               <td><input type="text" placeholder="user name" name="name" required="name"></td>
            </tr>
 
             <tr>
                <td><label>Password</label></td><br>
-               <td><input type="password"  name="password" required="password"></td>
+               <td><input type="password" placeholder="password"  name="password" required="password"></td>
            </tr>
 
     </table>
@@ -24,4 +24,4 @@
 </form>
     <a href="{% url 'register'%}">Register</a>
     <a href="{% url 'home'%}">home</a>
-{% endblock %}
+{% endblock contents%}

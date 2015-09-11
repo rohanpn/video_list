@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{%block details %}
+{%block contents %}
     <a href="{% url 'logout' %}">logout</a>
     {% if error %}
       No such video available
@@ -20,5 +20,5 @@
         </div>
     {% endif %}
     <br><a href="{% url 'list_video' %}">back</a><br>
-{% endblock details %}
+{% endblock contents %}
 
