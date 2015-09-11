@@ -2,7 +2,7 @@
 
 <!--List all the videos uploaded by the user-->
 
-{% block list_videos %}
+{% block contents %}
     <a href="{% url 'logout' %} ">logout</a>
     <div class="align-text-center">
         <form action = "{%url 'add_video' %}" method="post"><br>
@@ -26,4 +26,4 @@
             <p>No Videos are available.</p>
         </div>
     {% endif %}
-{% endblock list_videos %}
+{% endblock contents %}

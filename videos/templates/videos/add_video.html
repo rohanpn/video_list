@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 <!--template to upload a video-->
-{%block add_video %}
+{%block contents %}
     <form action="{% url 'upload_video' %}" method="post" enctype="multipart/form-data">
        {% csrf_token %}
         <table>
@@ -18,4 +18,4 @@
         <a href="{% url 'list_video' %}">back</a>
         <a href="{% url 'logout' %}">logout</a>
     </form>
-{% endblock %}
+{% endblock contents %}

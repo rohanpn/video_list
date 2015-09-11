@@ -3,7 +3,6 @@
 
 
 <html>
-<!--<link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet"/>-->
 <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 <head lang="en">
     <meta charset="UTF-8">
@@ -16,32 +15,11 @@
     </div>
 </head>
 <body class="bgcolor">
-    <!--home page-->
+
+
     {%block contents %}
     {% endblock contents %}
 
-    <!--login page for block-->
-    {% block video_login %}
-    {% endblock video_login%}
 
-    <!--list all the videos-->
-    {% block list_videos %}
-    {% endblock list_videos%}
-
-    <!--register user-->
-    {% block register%}
-    {% endblock %}
-
-    <!--list the videos of the particular logged in user-->
-    {% block video_list %}
-    {% endblock %}
-
-    <!--add video-->
-    {%block add_video %}
-    {% endblock add_video %}
-
-    <!--play video/show video details-->
-    {%block details%}
-    {% endblock details%}
 </body>
 </html>
