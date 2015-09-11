@@ -2,7 +2,7 @@
 import User
 from django.conf.urls import include, url
 from django.views.generic.base import TemplateView
-from User.views import video_register_view, VideoLoginView, VideoLogoutView, VideoRegisterView
+from User.views import VideoLoginView, VideoLogoutView, VideoRegisterView
 
 urlpatterns = [
 
